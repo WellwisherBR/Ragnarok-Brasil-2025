@@ -1,92 +1,79 @@
 //===== rAthena Script =======================================
-//= Ayothaya Guides
+//= Ayothaya Guides 
 //===== By: ==================================================
 //= MasterOfMuppets
-//===== Current Version: =====================================
+//===== Versão atual: =====================================
 //= 1.0
-//===== Compatible With: =====================================
-//= rAthena Project
+//===== Compatível com: =====================================
+//= Projeto rAthena
 //===== Description: =========================================
-//= [Official Conversion]
-//= Guides for the City of Ayothaya
-//===== Additional Comments: =================================
-//= 1.0 First version [L0ne_W0lf]
+//= [Conversão Oficial]
+//= Guias para a Cidade de Ayothaya
+//===== Comentários Adicionais: =================================
+//= 1.0 Primeira versão [L0ne_W0lf]
 //============================================================
 
 ayothaya,203,169,3	script	Noi#ayo	839,{
 	mes "[Noi]";
-	mes "Welcome to Ayothaya.";
-	mes "Our beautiful village is built";
-	mes "above the water, surrounded";
-	mes "by a dense forest.";
+	mes "Bem-vindo a Ayothaya.";
+	mes "Nossa bela vila é construída acima da água, cercada por uma floresta densa.";
 	next;
 	mes "[Noi]";
-	mes "There are many tourist attractions in this village that you won't be able to find anywhere else. Our fish markets and the unique architecture of our buildings are enough reason to visit Ayotaya.";
+	mes "Existem muitas atrações turísticas nesta vila que você não poderá encontrar em nenhum outro lugar.Nossos mercados de peixes e a arquitetura única de nossos edifícios são motivos suficientes para visitar Ayotaya.";
 	next;
 	mes "[Noi]";
-	mes "Please feel free";
-	mes "to take a look around.";
+	mes "Por favor, fique à vontade para dar uma olhada em volta.";
 	next;
-	switch(select("Building Locations.:Remove marks from mini-map.:Cancel.")) {
+	switch(select("Locais de construção.:Remova as marcas do mini-mapa.:Cancelar.")) {
 	case 1:
 		mes "[Noi]";
-		mes "Where would";
-		mes "you like to visit?";
+		mes "Onde você gostaria de visitar?";
 		next;
-		switch(select("Weapon Shop:Tool Shop:Tavern:Shrine:Fishing Spot:Cancel")) {
+		switch(select("Loja de armas:Loja de ferramentas:Taberna:Santuário:Ponto de pesca:Cancelar")) {
 		case 1:
 			mes "[Noi]";
-			mes "At our Weapon Shop,";
-			mes "you will find great weapons";
-			mes "favored by brave Ayothayan seafarers.";
+			mes "Em nossa loja de armas, você encontrará ótimas armas favorecidas pelos bravos marítimos Ayothayan.";
 			next;
 			mes "[Noi]";
-			mes "Our Weapon Shop";
-			mes "is located at ^55FF33+^000000.";
+			mes "Nossa loja de armas está localizada em ^55FF33+^000000.";
 			viewpoint 1,165,90,2,0x55FF33;
 			close;
 		case 2:
 			mes "[Noi]";
-			mes "We Ayothayans always make sure we have everything we need before we go traveling. It never hurts to be prepared, doesn't it?";
+			mes "Nós, ayothayans, sempre garantemos que temos tudo o que precisamos antes de viajarmos.Nunca é demais estar preparado, não é?";
 			next;
 			mes "[Noi]";
-			mes "Our Tool Shop";
-			mes "is located at ^3355FF+^000000.";
+			mes "Nossa loja de ferramentas está localizada em ^3355FF+^000000.";
 			viewpoint 1,129,86,3,0x3355FF;
 			close;
 		case 3:
 			mes "[Noi]";
-			mes "One of the basics of adventuring is gathering information, or at least that's what they say. You can meet people from all sorts of places in the Tavern. I'm sure you can learn something useful there.";
+			mes "Um dos conceitos básicos de aventureira é coletar informações, ou pelo menos é o que eles dizem.Você pode conhecer pessoas de todos os tipos de lugares da taberna.Tenho certeza que você pode aprender algo útil lá.";
 			next;
 			mes "[Noi]";
-			mes "Of course, you must";
-			mes "drop by our Tavern.";
-			mes "It is located at ^00FF00+^000000.";
+			mes "Claro, você deve passar pela nossa taberna.";
+			mes "Está localizado em ^00FF00+^000000.";
 			viewpoint 1,232,76,4,0x00FF00;
 			close;
 		case 4:
 			mes "[Noi]";
-			mes "If you wish to pray to God, or achieve a state of peace in your mind, why don't you visit our Shrine? Even if it's just for sight-seeing, everyone is";
-			mes "welcome there.";
+			mes "Se você deseja orar a Deus ou alcançar um estado de paz em sua mente, por que você não visita nosso santuário? Mesmo que seja apenas para passear, todos são bem-vindos lá.";
 			next;
 			mes "[Noi]";
-			mes "Our Shrine";
-			mes "is located at ^00FF00+^000000.";
+			mes "Nosso santuário está localizado em ^00FF00+^000000.";
 			viewpoint 1,208,283,5,0x00FF00;
 			close;
 		case 5:
 			mes "[Noi]";
-			mes "Since Ayothaya was built above the surface of the water and close to a beach, it's been a favorite spot for fishermen. Why don't you catch some fish for dinner at the Fishing Spot?";
+			mes "Desde que Ayothaya foi construído acima da superfície da água e perto de uma praia, tem sido um local favorito para os pescadores.Por que você não pega peixe para jantar no local de pesca?";
 			next;
 			mes "[Noi]";
-			mes "Our famous";
-			mes "Fishing Spot";
-			mes "is located at ^00FF00+^000000";
+			mes "Nosso famoso local de pesca está localizado em ^00FF00+^000000";
 			viewpoint 1,253,99,6,0x00FF00;
 			close;
 		case 6:
 			mes "[Noi]";
-			mes "If you wish to remove location marks on your mini-map, please select the 'Remove marks from mini-map' command from the menu.";
+			mes "Se você deseja remover as marcas de localização no seu mini-mapa, selecione as 'Remover marcas do comando mini-map' do menu.";
 			close;
 		}
 	case 2:
@@ -96,16 +83,13 @@ ayothaya,203,169,3	script	Noi#ayo	839,{
 		viewpoint 2,208,283,5,0x00FF00;
 		viewpoint 2,253,99,6,0x00FF00;
 		mes "[Noi]";
-		mes "Alright...";
-		mes "I've removed all the";
-		mes "location marks from";
-		mes "your mini-map.";
-		mes "Thank you.";
+		mes "Tudo bem...";
+		mes "Eu removi todas as marcas de localização do seu mini-mapa.";
+		mes "Obrigado.";
 		close;
 	case 3:
 		mes "[Noi]";
-		mes "Please enjoy";
-		mes "your travels.";
+		mes "Por favor, aproveite suas viagens.";
 		close;
 	}
 }
