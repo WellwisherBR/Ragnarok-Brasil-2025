@@ -1,19 +1,19 @@
-//===== rAthena Script =======================================
-//= Prontera Town
-//===== Description: =========================================
-//= NPCs in Prontera
-//===== Changelogs: ==========================================
-//= 1.0 Initial release [kobra_k88]
-//= 1.2 added baby novice check [Lupus]
-//= 1.3 Spellchecked [massdriller]
-//= 1.4 Optimized. Novices > 20 BaseJob can go to Culvert, too [Lupus]
-//= 1.5 Added a Jawaii related npc [MasterOfMuppets]
-//= 1.6 Replaced sewer_prt with (MISC_QUEST & 8) [Lupus]
-//= 1.7 Removed Duplicates [Silent]
-//= 1.8 Moved Culvert to quests/quests_prontera.txt
-//= 1.9 Rescripted to Aegis 10.3 standards. [L0ne_W0lf]
-//= 2.0 Removed "Hans Solo", as he is a Jawaii NPC. [L0ne_W0lf]
-//= 2.1 Disabled the Library Curator (bugreport:4105) [L0ne_W0lf]
+// ===== Rathena script ========================================
+// = Cidade Prontera
+// ===== Descrição: ==========================================
+// = npcs em prontário
+// ===== Changelogs: ===========================================
+// = 1.0 Liberação inicial [KOBRA_K88]
+// = 1.2 Adicionado cheque iniciante do bebê [lúpus]
+// = 1,3 Verificado por ortografia [MassDriller]
+// = 1,4 otimizado.Iniciantes> 20 BaseJob pode ir para Culvert também [lúpus]
+// = 1.5 Adicionado um NPC relacionado a Jawaii [MasterOfMuppets]
+// = 1.6 Substituído Sewer_prt com (Misc_Quest & 8) [Lupus]
+// = 1,7 duplicatas removidas [silencioso]
+// = 1.8 Mudou o Culvert para Quests/Quests_prontera.txt
+// = 1,9 Rescrito aos padrões AEGIS 10.3.[L0ne_w0lf]
+// = 2.0 removido "Hans Solo", pois ele é um NPC JAWAII.[L0ne_w0lf]
+// = 2.1 Desativado o curador da biblioteca (BugReport: 4105) [l0ne_w0lf]
 //============================================================
 
 // Prontera
