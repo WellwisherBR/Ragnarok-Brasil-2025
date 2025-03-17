@@ -1,16 +1,16 @@
-//===== rAthena Script ======================================= 
-//= Izlude Town Pre-Renewal
-//===== By: ================================================== 
-//= Daegaladh
-//===== Current Version: ===================================== 
-//= 1.0
-//===== Compatible With: ===================================== 
-//= rAthena Project
-//===== Description: ========================================= 
-//= [Official Conversion]
-//= Izlude town NPCs.
-//===== Additional Comments: ================================= 
-//= 1.0 First Version.
+// ===== Rathena script ======================================== 
+// = Izlude Town pré-renovação
+// ===== por: ===================================================== 
+// = Daegaladh
+// ===== Versão atual: ====================================== 
+// = 1.0
+// ===== Compatível com: ======================================= 
+// = projeto Rathena
+// ===== Descrição: ========================================== 
+// = [conversão oficial]
+// = Izlude Town NPCS.
+// ===== Comentários adicionais: =================================== 
+// = 1.0 Primeira versão.
 //============================================================
 
 izlude,201,181,2	duplicate(Sailor_izlude)	Sailor#izlude	100
