@@ -1,20 +1,20 @@
-//===== rAthena Script =======================================
-//= Brasilis Town Pre-Renewal
-//===== Description: =========================================
-//= [Official Conversion based on bRO & jRO servers]
-//= Brasilis town NPCs.
+// ===== Rathena script ========================================
+// = Brasilis Town pré-renovação
+// ===== Descrição: ==========================================
+// = [conversão oficial com base nos servidores BRO e JRO]
+// = NPCs da cidade de Brasilis.
 //
-// Note:
-// - Brasilis was introduced in Pre-Renewal only for bRO and
-//   jRO official servers with differences in monster stats,
-//   spawns and quests.
-//   It was added in Renewal for every other official server.
-//   Since we follow kRO this is disabled by default.
-//   You can enable it on npc/pre-re/scripts_athena.conf
-//===== Changelog: ===========================================
-//= 1.0 First Version [Daegaladh]
+// Observação:
+// - Brasilis foi introduzido em pré-renovação apenas para o irmão e
+// JRO Servidores oficiais com diferenças nas estatísticas de monstros,
+// Spawns e missões.
+// Foi adicionado na renovação para todos os outros servidores oficiais.
+// Como seguimos o KRO, isso é desativado por padrão.
+// você pode habilitá-lo no npc/pré-re/scripts_athena.conf
+// ===== Changelog: ============================================
+// = 1.0 Primeira versão [Daegaladh]
 //============================================================
 
-// Brasilis Transportation :: brasilis_trans
+// Transporte de Brasilis :: brasilis_trans
 //============================================================
 alberta,247,115,3	duplicate(Crewman_bra2)	Crewman#bra2	100
