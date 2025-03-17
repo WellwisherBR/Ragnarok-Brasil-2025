@@ -1,68 +1,67 @@
-//===== rAthena Script =======================================
-//= Brasilis Guide
-//===== Description: =========================================
-//= [Official Conversion based on bRO & jRO servers]
-//= Guide for the city of Brasilis.
+// ===== Rathena script ========================================
+// = Guia de Brasilis 
+// ===== Descrição: ==========================================
+// = [conversão oficial com base nos servidores BRO e JRO]
+// = Guia para a cidade de Brasilis.
 //
-// Note:
-// - Brasilis was introduced in Pre-Renewal only for bRO and
-//   jRO official servers with differences in monster stats,
-//   spawns and quests.
-//   It was added in Renewal for every other official server.
-//   Since we follow kRO this is disabled by default.
-//   You can enable it on npc/pre-re/scripts_athena.conf
-//===== Changelog: ===========================================
-//= 1.0 First Version [Daegaladh]
+// Observação:
+// - Brasilis foi introduzido em pré -renovação apenas para o irmão e
+// JRO Servidores oficiais com diferenças nas estatísticas de monstros,
+// Spawns e missões.
+// Foi adicionado na renovação para todos os outros servidores oficiais.
+// Como seguimos o KRO, isso é desativado por padrão.
+// você pode habilitá-lo no npc/pré-re/scripts_athena.conf
+// ===== Changelog: ============================================
+// = 1.0 Primeira versão [Daegaladh]
 //============================================================
 
 brasilis,219,97,3	script	Brasilis Guide	478,{
-	mes "[Brasilis Guide]";
-	mes "Welcome to ^8B4513Brasilis^000000, a country as passionate as the sun.";
-	mes "If you have any questions, please ask me.";
+	mes "[Guia Brasilis]";
+	mes "Bem-vindo a ^8B4513Brasilis^000000, um país tão apaixonado quanto o sol.";
+	mes "Se você tiver alguma dúvida, por favor me pergunte.";
 	next;
-	switch(select("Ask about locations:Remove Marks from Mini-Map:Cancel")) {
+	switch(select("Pergunte sobre locais:Remova as marcas do mini-mapa:Cancelar")) {
 	case 1:
-		mes "[Brasilis Guide]";
-		mes "Where can I guide you?";
+		mes "[Guia Brasilis]";
+		mes "Onde posso guiá-lo?";
 		next;
-		switch(select("[ Hotel ]:[ Jungle Cable ]:[ Art Museum ]:[ Market ]:[ Verass Monument ]")) {
+		switch(select("[ Hotel ]:[ Cabo da selva ]:[ Museu de Arte ]:[ Mercado ]:[ Monumento Verass ]")) {
 		case 1:
-			mes "[Brasilis Guide]";
-			mes "The Brasilis Hotel is located just above, ^FF3355+^000000.";
-			mes "Is there anything else I can do for you?";
+			mes "[Guia Brasilis]";
+			mes "O Brasilis Hotel está localizado logo acima, ^FF3355+^000000.";
+			mes "Há mais alguma coisa que eu possa fazer por você?";
 			viewpoint 1,274,151,2,0xFF3355;
 			close;
 		case 2:
-			mes "[Brasilis Guide]";
-			mes "Do you want to go through the rough jungle? You can take a ";
-			mes "Jungle Cable here ^CE6300+^000000.";
-			mes "Is there anything else I can do for you?";
+			mes "[Guia Brasilis]";
+			mes "Você quer passar pela selva áspera?Você pode pegar um cabo da selva aqui ^CE6300+^000000.";
+			mes "Há mais alguma coisa que eu possa fazer por você?";
 			viewpoint 1,308,335,3,0xCE6300;
 			close;
 		case 3:
-			mes "[Brasilis Guide]";
-			mes "The pride of Brasilis, the world scale Art Museum is at ^A5BAAD+^000000.";
-			mes "Is there anything else I can do for you?";
+			mes "[Guia Brasilis]";
+			mes "O orgulho de Brasilis, o museu de arte em escala mundial está em ^A5BAAD+^000000.";
+			mes "Há mais alguma coisa que eu possa fazer por você?";
 			viewpoint 1,137,167,4,0x00FF00;
 			close;
 		case 4:
-			mes "[Brasilis Guide]";
-			mes "You can buy items for hunting at the Market here ^55FF33+^000000.";
-			mes "Is there anything else I can do for you?";
+			mes "[Guia Brasilis]";
+			mes "Você pode comprar itens para caçar no mercado aqui ^55FF33+^000000.";
+			mes "Há mais alguma coisa que eu possa fazer por você?";
 			viewpoint 1,254,248,5,0x55FF33;
 			close;
 		case 5:
-			mes "[Brasilis Guide]";
-			mes "The iconic monument of Brasilis, the Verass Monument stands at ^3355FF+^000000.";
-			mes "Is there anything else I can do for you?";
+			mes "[Guia Brasilis]";
+			mes "O monumento icônico de Brasilis, o monumento Verass está em ^3355FF+^000000.";
+			mes "Há mais alguma coisa que eu possa fazer por você?";
 			viewpoint 1,195,235,6,0x3355FF;
 			close;
 		}
 		end;
 	case 2:
-		mes "[Brasilis Guide]";
-		mes "I'll remove all marks from your mini-map.";
-		mes "Is there anything else I can do for you?";
+		mes "[Guia Brasilis]";
+		mes "Vou remover todas as marcas do seu mini-mapa.";
+		mes "Há mais alguma coisa que eu possa fazer por você?";
 		viewpoint 0,274,151,2,0x00FF00;
 		viewpoint 0,308,335,3,0x00FF00;
 		viewpoint 0,137,167,4,0x00FF00;
@@ -70,8 +69,8 @@ brasilis,219,97,3	script	Brasilis Guide	478,{
 		viewpoint 0,195,235,6,0x00FF00;
 		close;
 	case 3:
-		mes "[Brasilis Guide]";
-		mes "Wandering on your own is always the best way to explore. Anyway, take care.";
+		mes "[Guia Brasilis]";
+		mes "Vagar por conta própria é sempre a melhor maneira de explorar.Enfim, tome cuidado.";
 		close;
 	}
 }
