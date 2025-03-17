@@ -1,7 +1,7 @@
 //===== rAthena Script ======================================= 
 // = EP 10+ Treinamentos iniciantes
 // ===== por: =====================================================
-// = Dr.Evil & MasterOfMuppets
+// = Dr.Evil & MasterOfMuppets 
 // ===== Versão atual: ======================================
 // = 2.4
 // ===== Compatível com: =======================================
