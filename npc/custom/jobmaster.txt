@@ -1,19 +1,19 @@
-//===== rAthena Script =======================================
-//= Job Master
-//===== Description: =========================================
-//= A fully functional job changer.
-//===== Additional Comments: =================================
-//= 1.0 Initial script. [Euphy]
-//= 1.1 Fixed reset on Baby job change.
-//= 1.2 Added Expanded Super Novice support and initial Kagerou/Oboro support.
-//= 1.3 Kagerou/Oboro added.
-//= 1.4 Rebellion added.
-//= 1.5 Added option to disable RebirthClass. [mazvi]
-//= 1.6 Added option to get job related equipment on change. [Braniff]
-//= 1.7 Readability changes. Also added BabyExpanded and BabySummoner classes. [Jey]
-//= 1.8 Added option to disable Baby Novice Only but Baby Class can be Enabled [mazvi]
-//= 1.9 Migrate/Integrate to Global Functions Platinum Skills. [mazvi]
-//= 2.0 Added 4th class [Lemongrass]
+// ===== Rathena script ========================================
+// = Job Master
+// ===== Descrição: ==========================================
+// = um trocador de trabalho totalmente funcional.
+// ===== Comentários adicionais: ===================================
+// = 1.0 Script inicial.[Eufy]
+// = 1.1 Redefinição fixa na mudança de trabalho do bebê.
+// = 1.2 Adicionado suporte super iniciante expandido e suporte inicial a Kagerou/Oboro.
+// = 1,3 Kagerou/Oboro adicionado.
+// = 1,4 rebelião adicionada.
+// = 1.5 Opção adicionada para desativar o RebirthClass.[Mazvi]
+// = 1.6 Adicionada opção para obter equipamentos relacionados ao trabalho na alteração.[Braniff]
+// = 1,7 mudanças de legibilidade.Também acrescentou as Jobs BabyExpand e Babysummoner.[Jey]
+// = 1.8 Opção adicionada para desativar apenas um novato para bebês, mas a aula de bebê pode ser ativada [Mazvi]
+// = 1,9 migrar/integrar -se às funções globais Platinum Skills.[Mazvi]
+// = 2.0 Adicionado 4ª Job [Lemongrass]
 //============================================================
 
 prontera,153,193,6	script	Job Master	123,{
@@ -24,15 +24,15 @@ function	Require_Level	{
 	if (BaseLevel < getarg(0) || JobLevel < getarg(1)) {
 		.@blvl = getarg(0) - BaseLevel;
 		.@jlvl = getarg(1) - JobLevel;
-		mes "Level requirement:";
+		mes "Requisito de nível:";
 		mes ((getarg(0)>1)? 
 			"^bb0000"+getarg(0)+"^000000 (^bb0000Base^000000) / ":"")+"^00bb00"+
 			getarg(1)+"^000000 (^00bb00Job^000000)";
 		mes "You need " +
-			((.@blvl > 0) ? "^bb0000"+.@blvl+"^000000 more base levels " + 
+			((.@blvl > 0) ? "^bb0000"+.@blvl+"^000000 mais níveis básicos " + 
 				((.@jlvl > 0) ? "and " : "") : "") +
-			((.@jlvl > 0) ? "^00bb00"+.@jlvl+"^000000 more job levels " : "") +
-			"to continue.";
+			((.@jlvl > 0) ? "^00bb00"+.@jlvl+"^000000 mais níveis de Job " : "") +
+			"para continuar.";
 		close;
 	}
 	return;
@@ -109,10 +109,10 @@ function	Check_Riding	{
 	// those special cases.
 	if (checkfalcon() || checkcart() || checkriding() || ismounting()) {
 		mes "Please remove your " +
-			((checkfalcon()) ? "falcon" : "") +
-			((checkcart()) ? "cart" : "") +
-			((checkriding()) ? "Peco" : "") +
-			((ismounting()) ? "mount" : "") +
+			((checkfalcon()) ? "Falcão" : "") +
+			((checkcart()) ? "Carrinho" : "") +
+			((checkriding()) ? "Peco-Peco" : "") +
+			((ismounting()) ? "Montaria" : "") +
 			" before proceeding.";
 		close;
 	}
@@ -120,7 +120,7 @@ function	Check_Riding	{
 }
 function	Check_SkillPoints	{
 	if (.SkillPointCheck && SkillPoint) {
-		mes "Please use all your skill points before proceeding.";
+		mes "Por favor, use todos os seus pontos de habilidade antes de prosseguir.";
 		close;
 	}
 	return;
@@ -297,7 +297,7 @@ function	Job_Menu	{
 	while(true) {
 		.@opt_cnt =  getarraysize(getarg(0));
 		if( .@opt_cnt <= 0 ) {
-			mes "No more jobs are available.";
+			mes "Não há mais Jobs disponíveis.";
 			close;
 		}
 
@@ -305,16 +305,16 @@ function	Job_Menu	{
 		if (.@opt_cnt > 1) {
 			// Multiple job classes given. Select one and save it to .@class
 			// After that confirm .@class
-			mes "Select a job.";
+			mes "Selecione a Job.";
 			.@menu$ = "";
 			for (.@i = 0; .@i < .@opt_cnt; .@i++) {
 				if( getelementofarray(getarg(0), .@i) == Job_Novice_High)
-					.@jobname$ = "^0055FFRebirth^000000";
+					.@jobname$ = "^0055FFResetar^000000";
 				else
 					.@jobname$ = jobname(getelementofarray(getarg(0), .@i));
 				.@menu$ = .@menu$ + " ~ " + .@jobname$ + ":";
 			}
-			.@menu$ = .@menu$+" ~ ^777777Cancel^000000";
+			.@menu$ = .@menu$+" ~ ^777777Cancelar^000000";
 			.@selected = select(.@menu$) - 1;
 			if( .@selected < 0 || .@selected >= .@opt_cnt )
 				close;
@@ -328,8 +328,8 @@ function	Job_Menu	{
 			// Super Baby can both be selected in one of the first class
 			// changes. That's why the Level Requirement is after and not before
 			// the selection.
-			mes "A base level of " + .SNovice +
-				" is required to turn into a " + jobname(.@class) + ".";
+			mes "Um nível básico de " + .SNovice +
+				" é necessário para se transformar em " + jobname(.@class) + ".";
 			return;
 		}
 		// Confirm the Class
@@ -347,7 +347,7 @@ function	Job_Change	{
 	.@to_cls = getarg(0);
 	next;
 	mes .NPCName$;
-	mes "You are now " + callfunc("F_InsertArticle", jobname(.@to_cls)) + "!";
+	mes "Você é agora " + callfunc("F_InsertArticle", jobname(.@to_cls)) + "!";
 	if (.@to_cls == Job_Novice_High && .LastJob)
 		lastJob = Class; // Saves the lastJob for rebirth
 	jobchange .@to_cls;
@@ -377,13 +377,13 @@ function	Confirm_Change	{
 		mes "Unknown Class Error.";
 		close;
 	}
-	mes "Do you want to change into ^0055FF"+jobname(.@class)+"^000000 class?";
-	.@job_option$ = " ~ Change into ^0055FF"+jobname(.@class)+"^000000 class";
+	mes "Você quer mudar para ^0055FF"+jobname(.@class)+"^000000 class?";
+	.@job_option$ = " ~ Mude para ^0055FF"+jobname(.@class)+"^000000 class";
 	if( .@class == Job_Novice_High)
-		.@job_option$ = " ~ ^0055FFRebirth^000000";
+		.@job_option$ = " ~ ^0055FFResetar^000000";
 	
 	if (select(.@job_option$+": ~ ^777777" + 
-			((.@back) ?"Go back" : "Cancel") + "^000000") == 1) {
+			((.@back) ?"Go back" : "Cancelar") + "^000000") == 1) {
 		Job_Change(.@class);
 	}
 	if (!.@back)
@@ -503,38 +503,38 @@ OnInit:
 	.NPCName$ = "[Job Master]";
 	
 	// Settings
-	.FourthClass = true;				// Enable fourth classes?
-	.FourthExpanded = true;				// Enable new expanded fourth classes: Ex. Hyper Novice, Rebellion, Shinkiro/Shiranui?
-	.ThirdClass = true;					// Enable third classes?
-	.RebirthClass = true;				// Enable rebirth classes?
-	.SecondExpanded = true;				// Enable new expanded second classes: Ex. Super Novice, Kagerou/Oboro, Rebellion?
-	.BabyNovice = true;					// Enable Baby novice classes? Disable it if you like player must have parent to get job baby.
-	.BabyClass = true;					// Enable Baby classes?
-	.BabyThird = true;					// Enable Baby third classes?
-	.BabyExpanded = true;				// Enable Baby Expanded classes: Ex. Baby Ninja, Baby Taekwon, etc.
-	.BabySummoner = true;				// Enable Baby Summoner?
-	.LastJob = true;					// Enforce linear class changes?
-	.SkillPointCheck = true;			// Force player to use up all skill points?
-	.Platinum = true;					// Get platinum skills automatically?
-	.GetJobEquip = false;				// Get job equipment (mostly weapons) on job change?
+	.FourthClass = false;				// Habilitar quarto Job?
+	.FourthExpanded = false;			// Ativar novas Jobs de quarta expansão: Ex.Hiper Novice, Rebelião, Shinkiro/Shiranui?
+	.ThirdClass = false;				// Habilitar terceiros Jobs?
+	.RebirthClass = false;				// Habilitar Job de renascimento?
+	.SecondExpanded = false;			// Ativar novas segundas Jobs expandidas: Ex.Super Novice, Kagerou/Oboro, Rebelião?
+	.BabyNovice = false;				// Habilitar Job de iniciantes para bebês? Desative-o se você gosta de jogador deve ter pai para conseguir Job, baby.
+	.BabyClass = false;					// Habilitar Job de bebê?
+	.BabyThird = false;					// Habilitar o 3 Baby Jobs?
+	.BabyExpanded = false;				// Ativar Job expandidas do bebê: Ex.Baby Ninja, Baby Taekwon, etc.
+	.BabySummoner = true;				// Ativar convocador de bebê?
+	.LastJob = true;					// Aplicar as alterações lineares da Job?
+	.SkillPointCheck = true;			// Force Player a usar todos os pontos de habilidade?
+	.Platinum = true;					// Obter habilidades de platina automaticamente?
+	.GetJobEquip = true;				// Obter equipamentos de Job (principalmente armas) na mudança de Job?
 
 	// Level Requirements
-	setarray .Req_First[0],1,10; 		// Minimum base level, job level to turn into 1st class
-	setarray .Req_Second[0],1,40; 		// Minimum base level, job level to turn into 2nd class
-	setarray .Req_Rebirth[0],99,50;		// Minimum base level, job level to rebirth
-	setarray .Req_Third[0],99,50;		// Minimum base level, job level to change to third class
-	setarray .Req_Fourth[0],200,70;		// Minimum base level, job level to change to fourth class
-	setarray .Req_Exp_NJ_GS[0],99,70; 	// Minimum base level, job level to turn into Expanded Ninja and Gunslinger
-	setarray .Req_Exp_SNOVI[0],99,99; 	// Minimum base level, job level to turn into Expanded Super Novice
-	setarray .Req_SHandler[0],200,60;	// Minimum base level, job level to turn into Spirit Handler
-	.SNovice = 45;						// Minimum base level to turn into Super Novice
+	setarray .Req_First[0],1,10; 		// Nível básico mínimo, nível de Job para se transformar em 1ª Job
+	setarray .Req_Second[0],1,50; 		// Nível básico mínimo, nível de Job para se transformar em 2ª Job
+	setarray .Req_Rebirth[0],99,50;		// Nível básico mínimo, nível de Job para renascimento
+	setarray .Req_Third[0],99,50;		// Nível básico mínimo, nível de Job para mudar para a terceira Job
+	setarray .Req_Fourth[0],200,70;		// Nível básico mínimo, nível de Job para mudar para a quarta Job
+	setarray .Req_Exp_NJ_GS[0],99,70; 	// Nível básico mínimo, nível de Job para se transformar em ninja e pistolas expandidos
+	setarray .Req_Exp_SNOVI[0],99,99; 	// Nível básico mínimo, nível de Job para se transformar em super novato expandido
+	setarray .Req_SHandler[0],200,60;	// Nível básico mínimo, nível de Job para se transformar em manipulador de espírito
+	.SNovice = 45;						// Nível de base mínima para se transformar em super novato
 	
 	// Setting adjustments by PACKETVER
 	if( PACKETVER < 20161207 ) {
 		if( .BabyExpanded )
-			debugmes "jobmaster: BabyExpanded is disabled due to outdated PACKETVER.";
+			debugmes "jobmaster: BabyExpands está desativado devido a desatualizado PACKETVER.";
 		if( .BabySummoner )
-			debugmes "jobmaster: BabySummoner is disabled due to outdated PACKETVER.";
+			debugmes "jobmaster: Babysummoner está desativado devido a desatualizado PACKETVER.";
 		.BabyExpanded = false;
 		.BabySummoner = false;
 	}
